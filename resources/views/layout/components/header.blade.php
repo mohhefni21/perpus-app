@@ -13,9 +13,6 @@
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="#" onclick="optimasiSistem()" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-solid fa-broom"></i> Optimasi sistem
-                </a>
                 <form action="/logout" method="post" id="logout-form">
                     @csrf
                     <a href="javascript:{}" onclick="document.getElementById('logout-form').submit(); return false;"

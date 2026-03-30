@@ -11,8 +11,7 @@
                             <h1>Login</h1>
                         </div>
                         <div class="card-header text-center">
-                            <h4>Sistem Pendukung Keputusan Penerima {{ $jenis_bantuan }}
-                                Desa {{ $nama_desa }}</h4>
+                            <h4>SIM Perpustakaan</h4>
                         </div>
                         <div class="card-body">
                             <form method="post" action="/login" class="needs-validation" novalidate="">
@@ -52,7 +51,7 @@
                         </div>
                     </div>
                     <div class="simple-footer">
-                        Copyright &copy; Moh Hefni
+                        Copyright © Stisla 2018
                     </div>
                 </div>
             </div>
