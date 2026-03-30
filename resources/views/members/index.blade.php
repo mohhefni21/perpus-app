@@ -55,4 +55,13 @@
         </div>
     </section>
 </div>
+<script>
+        @if (session()->has('success'))
+            iziToast.success({
+                title: 'Berhasil',
+                message: '{{ session('success') }}',
+                position: 'topRight'
+            });
+        @endif
+    </script>
 @endsection

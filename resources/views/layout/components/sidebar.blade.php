@@ -10,7 +10,7 @@
             <li class="menu-header">Dashboard</li>
             <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"
                     class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
-            
+
             <li class="menu-header">Data master</li>
             <li class="{{ request()->is('books*') ? 'active' : '' }}"><a href="{{ route('books.index') }}"
                     class="nav-link"><i class="fas fa-book"></i><span>Daftar Buku</span></a></li>
@@ -18,10 +18,16 @@
                     class="nav-link"><i class="fas fa-users"></i><span>Daftar Anggota</span></a></li>
 
             <li class="menu-header">Peminjaman</li>
-            <li class="{{ request()->is('periode') ? 'active' : '' }}"><a class="nav-link" href="/periode"><i
-                        class="fas fa-calendar-check"></i><span>Transaksi Peminjaman</span></a></li>
-            <li class="{{ request()->is('periode') ? 'active' : '' }}"><a class="nav-link" href="/periode"><i
-                        class="fas fa-calendar-check"></i><span>Riwayat Peminjaman</span></a></li>
+            <li class="{{ Route::is(['borrowings.index', 'borrowings.show']) ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('borrowings.index') }}">
+                    <i class="fas fa-history"></i><span>Riwayat Peminjaman</span>
+                </a>
+            </li>
+            <li class="{{ Route::is('borrowings.create') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('borrowings.create') }}">
+                    <i class="fas fa-plus-circle"></i><span>Transaksi Peminjaman</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>

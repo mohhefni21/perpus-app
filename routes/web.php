@@ -21,4 +21,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('books', BookController::class);
     Route::resource('members', MemberController::class);
     Route::resource('pinjam', BorrowingController::class);
+    Route::prefix('borrowings')->name('borrowings.')->group(function () {
+        Route::get('/', [BorrowingController::class, 'index'])->name('index');
+        Route::get('/create', [BorrowingController::class, 'create'])->name('create');
+        Route::post('/store', [BorrowingController::class, 'store'])->name('store');
+        Route::get('/{borrowing}', [BorrowingController::class, 'show'])->name('show');
+        Route::patch('/{borrowing}/return', [BorrowingController::class, 'returnBook'])->name('return');
+    });
 });
